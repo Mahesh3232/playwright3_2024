@@ -15,7 +15,6 @@ test('Verify login functionality with valid credentails',async({page})=>{
     await page.locator('[data-test="password"]').fill('secret_sauce')
     //Step 4 ==> Click on login button 
     await page.locator('input[id="login-button"]').click()
-    await page.waitForTimeout(3000)
     //Step 5 ==> Validations/ Assertions
     await expect(page).toHaveURL('https://www.saucedemo.com/v1/inventory.html')
     await expect(page).toHaveTitle('Swag Labs')
