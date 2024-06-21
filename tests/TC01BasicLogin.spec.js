@@ -34,7 +34,6 @@ test.only('Verify login functionality with invalid credentails',async({page})=>{
     //Step 5 ==> Validation/Assertions
     await expect(page.locator('div[role="alert"]')).toBeVisible()
     await expect(page.locator('p[class="oxd-text oxd-text--p oxd-alert-content-text"]')).toHaveText('Invalid credentials')
-
 })
 
 
