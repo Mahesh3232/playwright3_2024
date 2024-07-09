@@ -1,11 +1,11 @@
 const {test,expect} = require ('@playwright/test')
-//getbyAltText
-//getByLabel
-//getByPlaceholder
-//getByRole
+//getbyAltText ==> Alt attribute value
+//getByLabel ==> label tag name ==> text ==> arial-label attribute  ==> attr value 
+//getByPlaceholder ==> placeholder attrbute value 
+//getByRole ==> role as per element and text 
 //getByTestId
-//getByText
-//getByTitle
+//getByText ==> Text value
+//getByTitle ==> title attribute value
 //.locator
 
 test('verify getByAltText method in playwright',async({page})=>{
@@ -33,11 +33,27 @@ test('Verify getByPlaceholder method in playwright',async({page})=>{
     await page.waitForTimeout(3000)
 })
 
-test.only('Verify getByRole method in playwright',async({page})=>{
+test('Verify getByRole method in playwright',async({page})=>{
     await page.goto('https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html')
     let check1 = await page.getByRole('checkbox',{name:"Option 1"})
     check1.check()
     await page.waitForTimeout(3000)
     expect(check1).toBeVisible()
     expect(check1).toHaveAttribute('type','checkbox')
+})
+
+test('Verify getByText method in playwright',async({page})=>{
+    await page.goto('https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html')
+    let ele2 = await page.getByText('WebdriverUniversity.com (Dropdown Menu(s), Checkboxe(s), Radio Button(s))')
+    await expect(ele2).toBeVisible()
+    await expect(ele2).toHaveId('nav-title')
+})
+
+
+test.only('Verify getByTitle method in playwright',async({page})=>{
+    await page.goto('https://letcode.in/test#google_vignette')
+    let ele3 = await page.getByTitle('Koushik Chatterjee')
+    await expect(ele3).toBeVisible()
+    await expect(ele3).toHaveText(' Koushik Chatterjee ')
+    await expect(ele3).toHaveAttribute('target','_blank')
 })
