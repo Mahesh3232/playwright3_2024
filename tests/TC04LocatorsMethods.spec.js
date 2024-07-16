@@ -50,10 +50,18 @@ test('Verify getByText method in playwright',async({page})=>{
 })
 
 
-test.only('Verify getByTitle method in playwright',async({page})=>{
+test('Verify getByTitle method in playwright',async({page})=>{
     await page.goto('https://letcode.in/test#google_vignette')
     let ele3 = await page.getByTitle('Koushik Chatterjee')
     await expect(ele3).toBeVisible()
     await expect(ele3).toHaveText(' Koushik Chatterjee ')
     await expect(ele3).toHaveAttribute('target','_blank')
+})
+
+test.only('Verify getByTestId method in playwright',async({page})=>{
+    await page.goto('https://www.atlassian.com/')
+    let searchIcon = await page.getByTestId('global-nav-search-icon')
+    searchIcon.first().click()
+    await expect(page.locator('#autocomplete-0-input')).toBeVisible()
+    await page.waitForTimeout(3000)
 })
