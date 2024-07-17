@@ -3,7 +3,7 @@ const {test,expect} = require ('@playwright/test')
 //getByLabel ==> label tag name ==> text ==> arial-label attribute  ==> attr value 
 //getByPlaceholder ==> placeholder attrbute value 
 //getByRole ==> role as per element and text 
-//getByTestId
+//getByTestId ==> data-test-id attribute value
 //getByText ==> Text value
 //getByTitle ==> title attribute value
 //.locator
@@ -42,7 +42,7 @@ test('Verify getByRole method in playwright',async({page})=>{
     expect(check1).toHaveAttribute('type','checkbox')
 })
 
-test('Verify getByText method in playwright',async({page})=>{
+test.only('Verify getByText method in playwright',async({page})=>{
     await page.goto('https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html')
     let ele2 = await page.getByText('WebdriverUniversity.com (Dropdown Menu(s), Checkboxe(s), Radio Button(s))')
     await expect(ele2).toBeVisible()
@@ -58,7 +58,7 @@ test('Verify getByTitle method in playwright',async({page})=>{
     await expect(ele3).toHaveAttribute('target','_blank')
 })
 
-test.only('Verify getByTestId method in playwright',async({page})=>{
+test('Verify getByTestId method in playwright',async({page})=>{
     await page.goto('https://www.atlassian.com/')
     let searchIcon = await page.getByTestId('global-nav-search-icon')
     searchIcon.first().click()
