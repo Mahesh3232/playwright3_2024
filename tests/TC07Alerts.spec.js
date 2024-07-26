@@ -1,5 +1,4 @@
 const { test, expect } = require('@playwright/test')
-const exp = require('constants')
 
 //types of alerts 
 // js simple alert 
@@ -47,7 +46,7 @@ test('Verify simple alert in playwright', async ({ page }) => {
     await page.waitForTimeout(3000)
 })
 
-test.only('Verify confirm in playwright',async({page})=>{
+test('Verify confirm in playwright',async({page})=>{
     await page.goto('https://the-internet.herokuapp.com/javascript_alerts')
     page.on('dialog', async confirm =>{
         console.log(confirm.type())
@@ -60,6 +59,22 @@ test.only('Verify confirm in playwright',async({page})=>{
     await page.locator('[onclick="jsConfirm()"]').click()
     //await expect(page.locator('#result')).toHaveText('You clicked: Ok')
     await expect(page.locator('#result')).toHaveText('You clicked: Cancel')
+})
+
+
+test.only('Verify propmt alert in playwright',async({page})=>{
+    await page.goto('https://the-internet.herokuapp.com/javascript_alerts')
+    page.on('dialog', async prompt=>{
+        await expect(prompt.message()).toContain('I am a JS prompt')
+        await expect(prompt.type()).toContain('prompt')
+        // console.log(prompt.message())
+        // console.log(prompt.type())
+        //prompt.accept('Minskole')
+        prompt.dismiss()
+    })
+    await page.locator('[onclick="jsPrompt()"]').click()
+    //await expect(page.locator('#result')).toHaveText('You entered: Minskole')
+    await expect(page.locator('#result')).toHaveText('You entered: null')
 })
 
 
