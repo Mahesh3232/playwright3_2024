@@ -28,10 +28,20 @@ test('Handling static dropdown 3',async({page})=>{
     expect(result2).toHaveText('You have selected Captain America') 
 })
 
-test.only('Handling static dropdown 4',async({page})=>{
+test('Handling static dropdown 4',async({page})=>{
     await page.goto('https://letcode.in/dropdowns')
     await page.locator('#lang').selectOption({label:"Swift"})
     let result3 = await page.locator('[class="subtitle"]')
     expect(result3).toBeVisible()
     expect(result3).toHaveText('You have selected Swift') 
+})
+
+test.only('Handing static dropdown',async({page})=>{
+    await page.goto('https://letcode.in/dropdowns')
+    await page.locator('#country').selectOption('Colombia')
+    //await page.waitForTimeout(4000)
+    let value = await page.locator('#country').inputValue()
+    console.log(value)
+    await expect(value).toBe('Colombia')
+    await expect(page.locator('#country')).toHaveValue('Colombia')
 })
