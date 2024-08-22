@@ -10,9 +10,27 @@ test('Handling Iframeby .framelocator in playwright',async({page})=>{
 })
 
 //2nd way by .frame method by passing name attr
-test.only('Handling iframe by .frame method',async({page})=>{
+test('Handling iframe by .frame method',async({page})=>{
     await page.goto('https://letcode.in/frame')
     let frame1 = await page.frame('firstFr')
+    await frame1.locator('[name="fname"]').fill('Mahesh')
     await frame1.locator('[name="lname"]').fill('Aher')
+    await expect(frame1.locator('[name="fname"]')).toBeVisible()
+    await expect(frame1.locator('[name="lname"]')).toBeVisible()
+    await expect(frame1.locator('[class="title has-text-info"]'))
+    .toHaveText('You have entered Mahesh Aher')
     await page.waitForTimeout(3000)  
+})
+
+// 3rd way by passing URL to .frame method
+
+test.only('Verify Iframe by by url to .frame method',async({page})=>{
+    await page.goto('https://letcode.in/frame')
+    let frame3 = await page.frame({ url:'https://letcode.in/frameUI'})
+    await frame3.locator('[name="fname"]').fill('Mahesh')
+    await frame3.locator('[name="lname"]').fill('Aher')
+    await expect(frame3.locator('[name="fname"]')).toBeVisible()
+    await expect(frame3.locator('[name="lname"]')).toBeVisible()
+    await expect(frame3.locator('[class="title has-text-info"]'))
+    .toHaveText('You have entered Mahesh Aher')
 })
