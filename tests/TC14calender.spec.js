@@ -38,7 +38,7 @@ test('Verify datepicker with js values in playwright',async({page})=>{
     console.log(dayCount)
     for(let i =0; i<dayCount;i++){ //012
         let text = await page.locator('[class="day"]').nth(i).textContent()
-        console.log(text)
+       // console.log(text)
         if(text == d){
             await page.locator('[class="day"]').nth(i).click()
             break
