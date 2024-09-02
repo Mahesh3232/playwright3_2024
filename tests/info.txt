@@ -1,7 +1,6 @@
 api 
 test data 
 tabel
-calender
 shadow dom 
 multitab multiwindow ==> Context 
 POM / BDD

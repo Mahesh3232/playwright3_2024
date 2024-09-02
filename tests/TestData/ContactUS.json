@@ -1,7 +1,37 @@
-{
-    "fstName":"Mahesh",
-    "lstNAme" : "Aher",
-    "email":"mahesh.aher@gmail.com",
-    "msg":"I am learning playwright with js",
-    "SucessMsg":"Thank You for your Message!"
-}
+[
+    {
+        "fstName": "Mahesh",
+        "lstNAme": "Aher",
+        "email": "mahesh.aher@gmail.com",
+        "msg": "I am learning playwright with js",
+        "SucessMsg": "Thank You for your Message!"
+    },
+    {
+        "fstName": "Akash",
+        "lstNAme": "Aher",
+        "email": "Akash.aher@gmail.com",
+        "msg": "I am learning playwright with js",
+        "SucessMsg": "Thank You for your Message!"
+    },
+    {
+        "fstName": "Ganesh",
+        "lstNAme": "Aher",
+        "email": "Ganesh.aher@gmail.com",
+        "msg": "I am learning playwright with js",
+        "SucessMsg": "Thank You for your Message!"
+    },
+    {
+        "fstName": "Gokul",
+        "lstNAme": "Aher",
+        "email": "Gokul.aher@gmail.com",
+        "msg": "I am learning playwright with js",
+        "SucessMsg": "Thank You for your Message!"
+    },
+    {
+        "fstName": "Suraj",
+        "lstNAme": "Aher",
+        "email": "Suraj.aher@gmail.com",
+        "msg": "I am learning playwright with js",
+        "SucessMsg": "Thank You for your Message!"
+    }
+]
