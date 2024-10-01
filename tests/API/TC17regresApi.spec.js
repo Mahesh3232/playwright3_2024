@@ -64,3 +64,9 @@ test.only('Verify API PUT request',async({request})=>{
     expect(res3.name).toBe('Ganesh')
     expect(res3.job).toBe('zion resident')
 })
+
+test.only('API delete request',async({request})=>{
+    console.log(id)
+    let req4 = await request.delete(`https://reqres.in/api/users/${id}`)
+    expect(await req4.status()).toBe(204)
+})
