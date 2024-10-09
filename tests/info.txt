@@ -1,6 +1,6 @@
-api 
-tabel
-shadow dom 
+api ==> Complete
+tabel ==> Complete
+shadow dom ==> 
 POM / BDD
 confrigation file 
 session login 
