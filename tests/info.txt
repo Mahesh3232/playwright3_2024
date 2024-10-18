@@ -1,9 +1,13 @@
 api ==> Complete
 tabel ==> Complete
-shadow dom ==> 
+shadow dom ==>Complete
 POM / BDD
-confrigation file 
+confrigation file ==> Complete
 session login 
 downlode file 
-report 
-traces 
+report ==> Complete
+traces ==> Complete
+
+
+Page object Model ==> 
+     
