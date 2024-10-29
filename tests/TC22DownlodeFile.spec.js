@@ -8,5 +8,5 @@ test('Verify downlode file in playwright', async ({ page }) => {
     const download = await downloadPromise;
 
     // Wait for the download process to complete and save the downloaded file somewhere.
-    await download.saveAs('tests/Downlode/test.pdf' + download.suggestedFilename());
+    await download.saveAs('tests/Downlode/Minskole.pdf');
 })

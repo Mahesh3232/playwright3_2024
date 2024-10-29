@@ -1,13 +1,13 @@
 api ==> Complete
 tabel ==> Complete
 shadow dom ==>Complete
-POM / BDD
+POM / BDD 
 confrigation file ==> Complete
-session login 
-downlode file 
+session login ==> 
+downlode file ==>Complete
 report ==> Complete
 traces ==> Complete
 
 
-Page object Model ==> 
+Page object Model ==> Complete
      
